@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的项目</title>
+	<style>
+  
+  body,h1,h2,h3,h4,h5,h6,p,ul,li,dl,dt,dd {
+  	margin: 0;
+  	padding: 0;
+  }
+
+  a {
+  	text-decoration: none;
+  	/*最好不要直接在标签选择器里 设置 color，因为不确定所有a连接都是这个颜色*/
+  }
+
+  body {
+  	font-family: '微软雅黑',Arial;
+  	font-size: 14px;
+  	color: #999;
+  	line-height: 2;
+  	text-align: center;
+  	background-color: #fff2e3;
+  }
+
+  .cover {
+  	width: 300px;
+  }
+
+  .btn {
+  	background-color: #72b890;
+  	color: #fff;
+  	padding: 10px;
+  	margin: 10px 4px;
+  	line-height: 1;
+  	display: inline-block; /*把a标签从行内元素转换为块级元素，否则表面积大了，但是实际战占据的大小没变？*/
+  	border-radius: 3px;
+  }
+
+  .copyright a {
+  	color: #72b890;
+  }
+
+	</style>
+</head>
+<body>
+
+  <h1 class="title">我的项目</h1>
+	<p class="description">一句话介绍项目</p>
+	<div class="tabs">
+    <a class="btn" href="#">项目1</a>
+    <a class="btn" href="#">项目2</a>
+    <a class="btn" href="#">项目3</a>
+    <a class="btn" href="#">项目4</a>
+    <a class="btn" href="#">项目5</a>
+	</div>
+	<img class="cover" src="image/111.jpg" alt="">
+	<div class="action">
+    <a class="btn" href="#">查看源码</a>
+    <a class="btn" href="#">使用说明</a>
+	</div>
+	<div class="copyright">
+    作者：
+    <a href="#">我</a>
+	</div>
+</body>
+</html>

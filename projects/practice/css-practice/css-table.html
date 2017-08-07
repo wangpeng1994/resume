@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>css-table</title>
+	<style>
+		body {
+			font-family: arial;
+			background-color: #fff;
+		}
+
+		.layout {
+			width: 600px;
+			margin: 0 auto;
+		}
+
+		table {
+			margin-top: 30px;
+			width: 100%;
+			border: 1px solid #ccc;
+			border-collapse: collapse;
+		}
+
+		.h-table tr {
+			border-bottom: 1px solid #ccc;
+			text-align: left;
+		}
+
+		.h-table th {
+			color: #fff;
+			background-color: #4caf50;
+			padding: 8px 8px;
+		}
+
+		.h-table td {
+			padding: 8px 8px;
+		}
+
+		.h-table tr:nth-child(2n) {
+			background-color: #f1f1f1;
+		}
+
+		.h-table.another {
+			border: none;
+		}
+
+		.another th {
+			color: currentcolor;
+			background: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="layout">
+		<table class="h-table">
+			<tbody>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Points</th>
+				</tr>
+				<tr>
+					<td>Jill</td>
+					<td>Smith</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>Eve</td>
+					<td>Jackson</td>
+					<td>94</td>
+				</tr>
+				<tr>
+					<td>Adam</td>
+					<td>Johnson</td>
+					<td>67</td>
+				</tr>
+				<tr>
+					<td>Bo</td>
+					<td>Nilsson</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>Mike</td>
+					<td>Ross</td>
+					<td>35</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="h-table another">
+			<tbody>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Points</th>
+				</tr>
+				<tr>
+					<td>Jill</td>
+					<td>Smith</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>Eve</td>
+					<td>Jackson</td>
+					<td>94</td>
+				</tr>
+				<tr>
+					<td>Adam</td>
+					<td>Johnson</td>
+					<td>67</td>
+				</tr>
+				<tr>
+					<td>Bo</td>
+					<td>Nilsson</td>
+					<td>50</td>
+				</tr>
+				<tr>
+					<td>Mike</td>
+					<td>Ross</td>
+					<td>35</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+
+</html>

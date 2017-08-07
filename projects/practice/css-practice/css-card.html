@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>css-card</title>
+  <style>
+    body {
+      background-color: #fff;
+    }
+
+    div {
+      margin: 0 auto;
+    }
+
+    .layout>div {
+      width: 300px;
+      margin-top: 30px;
+      vertical-align: middle;
+      box-shadow: 0 5px 12px 0px rgba(1, 1, 1, 0.5);
+      border-bottom: 1px solid transparent;
+    }
+
+    img {
+      width: 300px;
+      vertical-align: middle;
+      opacity: 0.9;
+    }
+
+    .man h3 {
+      margin: 18px;
+    }
+
+    .man p {
+      margin: 18px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .pic p {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="man">
+      <img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/4b0637bf-eb96-4f3e-97f3-203a9b0b1e0c" alt="man">
+      <h3>小饥</h2>
+        <p>前端工程师一枚，热爱生活，热爱音乐，熟练掌握HTML、CSS、JavaScript快速构建页面，能手写原声JS语法，也能使用Angular.js、Vue.js或者其他常见的前端框架，快速构建项目</p>
+    </div>
+    <div class="pic">
+      <img src="http://7xpvnv.com2.z0.glb.qiniucdn.com/283a4100-10cd-4208-a3b5-4030ec03acf6" alt="pic">
+      <p>风景如画</p>
+    </div>
+
+  </div>
+</body>
+
+</html>

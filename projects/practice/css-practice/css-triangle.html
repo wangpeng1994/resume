@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>css-triangle</title>
+  <style>
+    .layout>div {
+      width: 0;
+      height: 0;
+      margin-top: 20px;
+    }
+
+    .triangle-1 {
+
+      border-top: 50px solid blue;
+      border-right: 50px solid yellow;
+      border-bottom: 50px solid green;
+      border-left: 50px solid red;
+    }
+
+    .triangle-2 {
+      border-top: 50px solid blue;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-left: 50px solid transparent;
+    }
+
+    .triangle-3 {
+      border-top: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+      border-left: 50px solid red;
+    }
+
+    .triangle-4 {
+      border-top: 50px solid transparent;
+      border-right: 50px solid yellow;
+      border-bottom: 50px solid transparent;
+      border-left: 50px solid transparent;
+    }
+
+    .triangle-5 {
+      border-top: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid green;
+      border-left: 50px solid transparent;
+    }
+
+    .triangle-6 {
+      border-top: 50px solid transparent;
+      border-left: 50px solid red;
+    }
+
+    .triangle-7 {
+      border-top: 50px solid transparent;
+      border-right: 50px solid green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="triangle-1"></div>
+    <div class="triangle-2"></div>
+    <div class="triangle-3"></div>
+    <div class="triangle-4"></div>
+    <div class="triangle-5"></div>
+    <div class="triangle-6"></div>
+    <div class="triangle-7"></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid blue; */
+  }
+ul  {
+  list-style: none;
+}
+
+/* common css */
+.layout {
+  width: 1000px;
+  margin: 0 auto;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+section {
+  padding: 150px 0;
+  text-align: center;
+}
+
+/* .bg-light-gray {
+  background-color: #e7e7e7;
+} */
+
+/* 定义偶数section背景色为灰色 */
+main > div:nth-child(even) {
+  background-color: #e7e7e7;
+}
+
+
+.section-heading {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+.section-subheading {
+  font-size: 16px;
+  font-style: italic;
+  font-weight:400;
+  margin-bottom: 75px;
+}
+
+
+/* 定义头部背景图片 */
+header {
+  height: 750px;
+  background: url("../image/bc-header.jpg") center center;
+  background-size: cover;
+  background-color: rgba(0,0,0,0.5);
+  padding-top: 200px;
+}
+/* 定义头部文字 */
+header .intro-text {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  padding-top: 280px;
+}
+.intro-text a {
+  display: inline-block;
+  width: 220px;
+  height: 70px;
+  margin-top: 70px;
+  text-decoration: none;
+  background: #aa0000;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 70px;
+  border-radius: 7px;
+}
+.intro-text a:hover {
+  background: #ff2525;
+}
+
+/* 定义导航栏 */
+nav {
+  position: fixed;
+  z-index: 999;
+  /* background:  url("../image/nav-logo.png") 100px 10px no-repeat;
+  background-size: 50px;*/
+  background-color: #000; 
+  width: 100%;
+  height: 90px;
+  box-sizing: border-box;
+  padding: 0 100px;
+}
+/* 定义logo，a标签如果是默认inline，就无法设置宽高，如果是block就会独占一行 */
+ nav > a {
+  display: inline-block;
+  height: 70px;
+  margin-top: 10px;
+}
+nav img {
+  height: 100%;
+}
+/* 定义navbar锚点 */
+nav .nav-list {
+  width: 480px;
+  float: right;
+  margin-top: 28px;
+}
+nav .nav-list li {
+  float: left;
+  padding-left: 30px;
+}
+.nav-list  a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+}
+/* 定义锚点特效 */
+.nav-list a:hover::before, a:hover::after { position: absolute; }
+.nav-list a:hover::before { content: '['; left: -10px; color: red;}
+.nav-list a:hover::after { content: ']'; right:  -10px; color: red;}
+
+
+/* 定义section skills */
+
+#skills ul li {
+  width: calc(33.33% - 24px);
+  padding: 0 12px;
+  float: left;
+}
+#skills img {
+  display: block;
+  width: 120px;
+  margin: 80px auto 0 auto;
+}
+#skills h3 {
+  margin: 20px 0;
+}
+
+/* 定义section relation */
+
+.relation {
+  margin-right: -10px;
+}
+section .relation figure {
+  width: calc(33% - 20px);
+  margin: 10px;
+  float: left;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.5);
+}
+/* 定义a标签伪类背景色 */
+section .relation a {
+  display: block;
+  position: relative;
+}
+section .relation a:hover::before {
+  content: '+';
+  font-size: 100px;
+  color: #ccc;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(158, 57, 59, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 定义 figure内的文本部分*/
+section .relation img {
+  width: 100%;
+  height: 100%;
+}
+section .relation figcaption {
+  padding: 20px;
+  line-height: 1.7;
+}
+section .relation p {
+  color: #666;
+  padding: 0 20px 20px 20px;
+}
+
+/* 定义about */
+
+/* 定义圆圈 */
+section .timeline li {
+  margin-bottom: 100px;
+  position: relative;
+}
+.timeline img {
+  height: 100%;
+}
+.timeline .circle {
+  width: 136px;
+  height: 136px;
+  position: absolute;
+  left: 50%;
+  margin-left: -76px;
+  border: 8px solid #e7e7e7;
+  border-radius: 50%;
+  overflow: hidden;
+} 
+/* 定义时间轴线 */
+.timeline {
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -2px;
+  border-left: 4px solid #e7e7e7;
+}
+/* 定义文本描述 */
+.timeline .story {
+  width: 420px;
+  height: 100%;
+  padding: 0 20px 20px 20px;
+  box-sizing: border-box;
+}
+.timeline h4 {
+  margin-bottom: 10px;
+}
+.timeline p {
+  color: #666;
+}
+/* 定义文本左右浮动区别 */
+.timeline li:nth-child(odd) {
+  float: left;
+  text-align: right;
+  padding-right: calc(100% - 420px);
+
+}
+.timeline li:nth-child(even) {
+  float: left;
+  text-align: left;
+  padding-left: calc(100% - 420px);
+}
+
+/* 定义section team */
+

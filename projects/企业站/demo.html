@@ -1,158 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="./css.demo.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      /* border: 1px solid blue; */
-    }
-    /* 定义头部背景图片 */
-    header {
-      height: 750px;
-      background: url("./image/bc-header.jpg") center center;
-      background-size: cover;
-      background-color: rgba(0,0,0,0.5);
-    }
-    /* 定义头部文字 */
-    header .intro-text {
-      color: #fff;
-      font-size: 2.5rem;
-      text-align: center;
-      padding-top: 280px;
-    }
-    .intro-text a {
-      display: inline-block;
-      width: 220px;
-      height: 70px;
-      margin-top: 70px;
-      text-decoration: none;
-      background: #aa0000;
-      color: black;
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 70px;
-      border-radius: 7px;
-    }
-    .intro-text a:hover {
-      background: #ff2525;
-    }
-    /* 定义导航栏 */
-    nav {
-      position: fixed;
-      background: url("./image/nav-logo.jpg") 100px 10px no-repeat;
-      background-size: 50px;
-      background-color: #000;
-      width: 100%;
-      height: 90px;
-      box-sizing: border-box;
-      padding: 0 100px;
-    }
-    nav .nav-list {
-      width: 520px;
-      float: right;
-      margin-top: 28px;
-    }
-    nav .nav-list li {
-      float: left;
-      list-style: none;
-      padding-left: 40px;
-    }
-    .nav-list li a {
-      display: inline-block;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      color: #fff;
-    }
-    /* 定义section公共属性 */
-    section {
-      padding: 150px 0;
-    }
-    .bg-light-gray {
-      background-color: #e7e7e7;
-    }
-    .text-center {
-      text-align: center;
-    }
-    .section-heading {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-    .section-subheading {
-      font-size: 16px;
-      font-style: italic;
-      font-weight:400;
-      margin-bottom: 75px;
-    }
-    /* 定义里面的ul相同布局方式 */
-    #skills ul, #relation ul {
-      max-width: 1160px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 auto;
-    }  
-
-    /* 定义skills */
-
-    #skills ul li {
-      width: 360px;
-      text-align: center;
-      list-style: none;
-      padding: 0 12px;
-    }
-    #skills img {
-      display: block;
-      width: 120px;
-      margin: 0 auto;
-    }
-    #skills h3 {
-      margin: 20px 0;
-    }
-
-    /* 定义relation */
-    /* 定义li的样式，固定宽度，文字内容居中，去除多余样式 */
-    #relation ul li {
-      width: 360px;
-      text-align: center;
-      list-style: none;
-      margin: 20px 12px 0 12px;
-      box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.5);
-    } 
-    /* 定义li里面div背景照片 */
-    #relation li .relation-photo {
-      height: 260px;
-      background: url("./image/relation/1.jpg") center center;
-      background-size: cover;
-    }
-    #relation li .relation-photo:hover {
-      opacity: 0.3;
-    }
-
-    /* 定义li里面文字div行高，内边距 */
-    #relation li .relation-caption {
-      padding: 20px;
-      line-height: 1.7;
-    }
-
-
-    
-  </style>
+  <link rel="stylesheet" href="css/demo.css">
+  <script type="text/javascript" src="js/scroll.js"></script>
 </head>
+
 <body>
   <nav>
+    <a href="https://zh.wikipedia.org/wiki/%E5%AE%87%E6%99%BA%E6%B3%A2%E4%B8%80%E6%97%8F" target="_blank"><img src="image/nav-logo.png" alt=""></a>
     <ul class="nav-list">
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#relation">portfolio</a></li>
-      <li><a href="#about">about</a></li>
-      <li><a href="#team">team</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <li><a href="#relation">RELATION</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#team">TEAM</a></li>
+      <li><a href="#contact">CONTACT</a></li>
     </ul>
   </nav>
   <header>
@@ -162,101 +28,151 @@
       <a href="#skills">TELL ME MORE</a>
     </div>
   </header>
-
-  <section id="skills">
-    <div class="text-center">
-      <h2 class="section-heading">SKILLS</h2>
-      <h3 class="section-subheading">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</h3>
+  <main>
+    <div>
+      <section id="skills" class="layout">
+        <div>
+          <h2 class="section-heading">SKILLS</h2>
+          <h3 class="section-subheading">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</h3>
+        </div>
+        <ul class="clearfix">
+          <li>
+            <img src="image/skills/1.jpg" alt="">
+            <h3 class="skills-heading">月读</h3>
+            <p class="skills-text">属于幻术, 月读由宇智波鼬的左眼发动，在月读发动的同时，只要目光相对，对方的眼前就会出现未知的异界。在这个世界里，一切因素包括时间、地点、地理位置等等都受到施术者的控制，从而给对方在精神上给予毁灭性的打击。</p>
+          </li>
+          <li>
+            <img src="image/skills/2.jpg" alt="">
+            <h3 class="skills-heading">鸟分身之术</h3>
+            <p class="skills-text">把自己的查克拉投影到数十只鸟的身上，并做成分身的忍术。因为是以鸟作为媒介而使出的分身术，所以比影分身之术所消耗的查克拉量要小。 数十只鸟形成分身体。当施术者切断查克拉的时候，鸟就会四散而去。</p>
+          </li>
+          <li>
+            <img src="image/skills/3.jpg" alt="">
+            <h3 class="skills-heading">天照</h3>
+            <p class="skills-text">寄宿在鼬右眼中的瞳术。“万花筒写轮眼”的极个别开眼者能够操纵的火遁系最高级忍术。通过调整眼球的对焦，即可在焦点处燃烧起破坏力强大的黑色火焰，具有不将所燃烧的物体燃烧殆尽就不会熄灭的特点。</p>
+          </li>
+        </ul>
+      </section>
     </div>
-    <ul>
-      <li>
-        <img src="./image/skills/1.jpg" alt="">
-        <h3 class="skills-heading">月读</h3>
-        <p class="skills-text">属于幻术, 月读由宇智波鼬的左眼发动，在月读发动的同时，只要目光相对，对方的眼前就会出现未知的异界。在这个世界里，一切因素包括时间、地点、地理位置等等都受到施术者的控制，从而给对方在精神上给予毁灭性的打击。</p>
-      </li>
-      <li>
-        <img src="./image/skills/2.jpg" alt="">
-        <h3 class="skills-heading">鸟分身之术</h3>
-        <p class="skills-text">把自己的查克拉投影到数十只鸟的身上，并做成分身的忍术。因为是以鸟作为媒介而使出的分身术，所以比影分身之术所消耗的查克拉量要小。 数十只鸟形成分身体。当施术者切断查克拉的时候，鸟就会四散而去。</p>
-      </li>
-      <li>
-        <img src="./image/skills/3.jpg" alt="">
-        <h3 class="skills-heading">天照</h3>
-        <p class="skills-text">寄宿在鼬右眼中的瞳术。“万花筒写轮眼”的极个别开眼者能够操纵的火遁系最高级忍术。通过调整眼球的对焦，即可在焦点处燃烧起破坏力强大的黑色火焰，具有不将所燃烧的物体燃烧殆尽就不会熄灭的特点。</p>
-      </li>
-    </ul>
-  </section>
-  <section id="relation" class="bg-light-gray">
-     <div class="text-center">
-      <h2 class="section-heading">RELATION</h2>
-      <h3 class="section-subheading">你也是和我一样可以开启写轮眼的人，但必须有条件…那就是杀死自己最亲密的人</h3>
-    </div>    
-    <ul>
-      <li>
-        <div class="relation-photo">
+    <div>
+      <section id="relation" class="layout">
+        <div>
+          <h2 class="section-heading">RELATION</h2>
+          <h3 class="section-subheading">你也是和我一样可以开启写轮眼的人，但必须有条件…那就是杀死自己最亲密的人</h3>
         </div>
-        <div class="relation-caption">
-          <h3 class="relation-heading">宇智波佐助</h3>
-          <p class="relation-text">对于鼬来说，最重要的人便是宇智波佐助。</p>
+        <div class="relation clearfix">
+          <figure>
+            <a href=""><img src="image/relation/1.jpg"></a>
+            <figcaption>宇智波佐助</figcaption>
+            <p>对于鼬来说，最重要的人便是宇智波佐助。</p>
+          </figure>
+          <figure>
+            <a href=""><img src="image/relation/1.jpg"></a>
+            <figcaption>宇智波佐助</figcaption>
+            <p>对于鼬来说，最重要的人便是宇智波佐助。</p>
+          </figure>
+          <figure>
+            <a href=""><img src="image/relation/1.jpg"></a>
+            <figcaption>宇智波佐助</figcaption>
+            <p>对于鼬来说，最重要的人便是宇智波佐助。</p>
+          </figure>
+          <figure>
+            <a href=""><img src="image/relation/1.jpg"></a>
+            <figcaption>宇智波佐助</figcaption>
+            <p>对于鼬来说，最重要的人便是宇智波佐助。</p>
+          </figure>
+          <figure>
+            <a href=""><img src="image/relation/1.jpg"></a>
+            <figcaption>宇智波佐助</figcaption>
+            <p>对于鼬来说，最重要的人便是宇智波佐助。</p>
+          </figure>
+          <figure>
+            <a href=""><img src="image/relation/1.jpg"></a>
+            <figcaption>宇智波佐助</figcaption>
+            <p>对于鼬来说，最重要的人便是宇智波佐助。</p>
+          </figure>
         </div>
-      </li>
-      <li>
-        <div class="relation-photo"></div>
-        <div class="relation-caption">
-          <h3 class="relation-heading">宇智波佐助</h3>
-          <p class="relation-text">对于鼬来说，最重要的人便是宇智波佐助。</p>
-        </div>
-      </li>
-      <li>
-        <div class="relation-photo"></div>
-        <div class="relation-caption">
-          <h3 class="relation-heading">宇智波佐助</h3>
-          <p class="relation-text">对于鼬来说，最重要的人便是宇智波佐助。</p>
-        </div>
-      </li>
-      <li>
-        <div class="relation-photo"></div>
-        <div class="relation-caption">
-          <h3 class="relation-heading">宇智波佐助</h3>
-          <p class="relation-text">对于鼬来说，最重要的人便是宇智波佐助。</p>
-        </div>
-      </li>
-      <li>
-        <div class="relation-photo"></div>
-        <div class="relation-caption">
-          <h3 class="relation-heading">宇智波佐助</h3>
-          <p class="relation-text">对于鼬来说，最重要的人便是宇智波佐助。</p>
-        </div>
-      </li>
-      <li>
-        <div class="relation-photo"></div>
-        <div class="relation-caption">
-          <h3 class="relation-heading">宇智波佐助</h3>
-          <p class="relation-text">对于鼬来说，最重要的人便是宇智波佐助。</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-  <section id="about">
-    <div class="text-center">
-      <h2 class="section-heading">skills</h2>
-      <h3 class="section-subheading">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</h3>
+      </section>
     </div>
-  </section>
-  <section id="team" class="bg-light-gray">
-    <div class="text-center">
-      <h2 class="section-heading">skills</h2>
-      <h3 class="section-subheading">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</h3>
+    <div>
+      <section id="about" class="layout">
+        <div>
+          <h2 class="section-heading">ABOUT</h2>
+          <h3 class="section-subheading">他能以血红双眸看透三界</h3>
+          <ul class="timeline clearfix">
+            <li>
+              <div class="circle">
+                <img src="image/about/1.jpg" alt="">
+              </div>
+              <div class="story">
+                <h4>年幼时</h4>
+                <h4>超越种族界限 为村子着想的天才</h4>
+                <p>木叶九尾之乱中，5岁的鼬一个人在家保护还是婴儿的弟弟佐助。7岁从忍者学校毕业，鼬是宇智波一族与宇智波止水齐名的少年天才，两人也是挚友。第三次忍界大战，鼬年仅4岁就目睹了太多的死亡，对于这么小年纪就经历战争的他来说，战争简直就是地狱，这个创伤使鼬厌恶战乱，从此成为一个热爱和平的男人。</p>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+                <img src="image/about/2.jpg" alt="">
+              </div>
+              <div class="story">
+                <h4>宇智波族政变</h4>
+                <h4>忠孝不能两全 大义手刃全族</h4>
+                <p>止水自杀使得宇智波族人元气大伤，士气低落，但是族人仍然决意叛变。政变当晚宇智波鼬和宇智波带土（之前鼬找到他答应帮他向宇智波一族复仇但不许他对村子出手）一起动手诛灭了全族，宇智波鼬含泪与父母道别，他们将佐助托付给了鼬，并给弟弟设定了一个向自己复仇这一目标之后逃离木叶，临走前威胁团藏如果敢伤害佐助就将村子情报出卖敌国。逃离之后根据带土的建议加入了他的组织-晓。</p>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+                <img src="image/about/3.jpg" alt="">
+              </div>
+              <div class="story">
+                <h4>兄弟之战</h4>
+                <h4>向宇智波族人赎罪 间接死在弟弟之手</h4>
+                <p>佐助杀死大蛇丸后成立了鹰小队目的是杀死宇智波鼬。在战斗中，鼬根本没有将佐助置于死地的想法，只是为了令佐助摆脱大蛇丸的咒印束缚而做戏要挖其双目，遂用十拳剑将大蛇丸成功封印，之后用天照烧死了大蛇丸的白蛇。生命的最后，鼬不仅在佐助的眼中设置了转写封印天照来防范斑（宇智波带土）的不良居心，而且微笑着死在了佐助面前，让佐助达成了开启万花筒写轮眼的条件。</p>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+                <img src="image/about/4.jpg" alt="">
+              </div>
+              <div class="story">
+                <h4>秽土转生</h4>
+                <h4>我一直深爱着你</h4>
+                <p>第四次忍界大战时期，鼬被药师兜用“秽土转生”重新召唤至人世，开战后和被秽土转生的长门一起行动。借助之前交给鸣人的力量“守护木叶”脱离了秽土转生的控制。后与弟弟相遇，联手在洞穴中对抗兜，令兜陷入“伊邪那美”的永恒轮回之中，并利用幻术得知秽土转生结印方法，解除了秽土转生。在弥留之际，鼬对佐助说“不论你选择什么样的道路，我都一直深爱着你”，之后灵魂升天。</p>
+              </div>
+            </li>
+            <li>
+              <div class="circle">
+                <img src="image/about/5.jpg" alt="">
+              </div>
+              <div class="story">
+                <h4></h4>
+                <h4></h4>
+                <p></p>
+              </div>
+            </li>
+          </ul>
+      </section>
     </div>
-  </section>
-  <section id="contact">
-    <div class="text-center">
-      <h2 class="section-heading">skills</h2>
-      <h3 class="section-subheading">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</h3>
+    <div>
+      <section id="team" class="layout">
+        <div>
+          <h2 class="section-heading">skills</h2>
+          <h3 class="section-subheading">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</h3>
+        </div>
+      </section>
     </div>
-  </section>
+    <div>
+      <section id="contact" class="layout">
+        <div>
+          <h2 class="section-heading">skills</h2>
+          <h3 class="section-subheading">为什么你会这么弱？就是因为你对我的仇恨...还不够深...</h3>
+        </div>
+      </section>
+    </div>
+  </main>
   <footer>
-    
+
   </footer>
 </body>
+
 </html>

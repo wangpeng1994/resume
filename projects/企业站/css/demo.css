@@ -7,10 +7,12 @@
 ul  {
   list-style: none;
 }
-
+a {
+  text-decoration: none;
+}
 /* common css */
 .layout {
-  width: 1000px;
+  width: 1150px;
   margin: 0 auto;
 }
 .clearfix::after {
@@ -47,30 +49,30 @@ main > div:nth-child(even) {
 
 /* 定义头部背景图片 */
 header {
-  height: 750px;
+  height: 850px;
   background: url("../image/bc-header.jpg") center center;
   background-size: cover;
   background-color: rgba(0,0,0,0.5);
-  padding-top: 200px;
+  padding-top: 100px;
 }
 /* 定义头部文字 */
 header .intro-text {
   color: #fff;
   font-size: 2.5rem;
   text-align: center;
-  padding-top: 280px;
+  padding-top: 300px;
 }
 .intro-text a {
   display: inline-block;
   width: 220px;
   height: 70px;
-  margin-top: 70px;
-  text-decoration: none;
+  margin-top: 30px;
   background: #aa0000;
   color: black;
   font-size: 20px;
   font-weight: bold;
   line-height: 70px;
+  border: 2px solid #c5b3a5;
   border-radius: 7px;
 }
 .intro-text a:hover {
@@ -110,7 +112,6 @@ nav .nav-list li {
 }
 .nav-list  a {
   display: inline-block;
-  text-decoration: none;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
@@ -121,12 +122,47 @@ nav .nav-list li {
 .nav-list a:hover::before { content: '['; left: -10px; color: red;}
 .nav-list a:hover::after { content: ']'; right:  -10px; color: red;}
 
+/* 定义头部响应式 */
+/* 背景图片的响应式 */
+@media screen and (max-width: 800px){
+  section {
+    padding: 100px 0;
+    text-align: center;
+  }
+  /* 头部高度见小 */
+  header {
+    height: 300px;
+    padding-top: 150px;
+  }
+  header .intro-text {
+    font-size: 2rem;
+    padding-top: 20px;
+  }
+  .intro-text a {
+    width: 220px;
+    height: 70px;
+    margin-top: 30px;
+  }
+  /* 在响应屏幕时，给DOM中btn添加样式 */
+  nav .btn {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    background: url("../image/images.png") center center no-repeat;
+    background-size: contain;
+  }
+  /* 隐藏导航栏中的链接 */
+  nav .nav-list{
+    display: none;
+  }
+}
 
 /* 定义section skills */
 
 #skills ul li {
-  width: calc(33.33% - 24px);
-  padding: 0 12px;
+  width: calc(33.33% - 30px);
+  padding: 0 15px;
   float: left;
 }
 #skills img {
@@ -137,15 +173,28 @@ nav .nav-list li {
 #skills h3 {
   margin: 20px 0;
 }
+/* 定义skills 的响应式 */
+/* 第一阶段，屏幕小于1200px时，section宽度变窄，相应的li自适应变小，但还是3列 */
+@media screen and (max-width: 1200px) {
+  #skills {
+    width: 950px;
+  }
+}
+/* 第二阶段，屏幕小于1000px时，section100%自适应屏幕大小，同时li变为独占1行，分3列展示 */
+@media screen and (max-width: 1000px) {
+  #skills {
+    width: 100%;
+  }
+  #skills ul li {
+    width: calc(100% - 30px);
+  }
+}
 
 /* 定义section relation */
 
-.relation {
-  margin-right: -10px;
-}
-section .relation figure {
-  width: calc(33% - 20px);
-  margin: 10px;
+.relation figure {
+  width: calc(33.3333% - 30px);
+  margin: 15px;
   float: left;
   background-color: #fff;
   box-shadow: 0px 5px 10px 2px rgba(0,0,0,0.5);
@@ -183,34 +232,61 @@ section .relation p {
   padding: 0 20px 20px 20px;
 }
 
+/* 定义relation的响应式 */
+/* 第一阶段，屏幕小于1200px时，内容宽度变窄，相应的figure自适应变小，但还是一行3列 */
+@media screen and (max-width: 1200px) {
+  #relation {
+    width: 950px;
+  }
+}
+/* 第二阶段，屏幕小于1000px时，容器变为800px，同时figure变为一行2列 */
+@media screen and (max-width: 1000px) {
+  #relation {
+    width: 800px;
+  }
+  .relation figure {
+    width: calc(50% - 30px);
+  }
+}
+/* 第三阶段，屏幕小于800px时，容器变为400px，同时figure变为独占一行 */
+@media screen and (max-width: 800px){
+  #relation {
+    width: 400px;
+    
+  }
+  .relation figure {
+    width: 370px;
+  }
+}
+
 /* 定义about */
 
 /* 定义圆圈 */
 section .timeline li {
+  padding: 0 70px;
   margin-bottom: 100px;
-  position: relative;
+  
 }
 .timeline img {
   height: 100%;
 }
+ul.timeline {
+  position: relative;
+}
 .timeline .circle {
-  width: 136px;
-  height: 136px;
+  width: 154px;
+  height: 154px;
   position: absolute;
   left: 50%;
-  margin-left: -76px;
+  margin-left: -85px;
   border: 8px solid #e7e7e7;
   border-radius: 50%;
   overflow: hidden;
 } 
 /* 定义时间轴线 */
-.timeline {
-  position: relative;
-}
 .timeline::before {
   content: '';
   height: 100%;
-  display: block;
   position: absolute;
   left: 50%;
   margin-left: -2px;
@@ -218,10 +294,8 @@ section .timeline li {
 }
 /* 定义文本描述 */
 .timeline .story {
-  width: 420px;
-  height: 100%;
+  width: 350px;
   padding: 0 20px 20px 20px;
-  box-sizing: border-box;
 }
 .timeline h4 {
   margin-bottom: 10px;
@@ -237,10 +311,155 @@ section .timeline li {
 
 }
 .timeline li:nth-child(even) {
-  float: left;
+  float: right;
   text-align: left;
   padding-left: calc(100% - 420px);
+}
+/* 定义timelin 响应式 */
+
+/* 第一阶段，屏幕小于1200px时，内容宽度变窄，相应的circle变成指定大小，同时去除li两边内边距，以令左右story分散一些 */
+@media screen and (max-width: 1200px) {
+  #about {
+    width: 950px;
+  }
+  .timeline .circle {
+    width: 134px;
+    height: 134px;
+    margin-left: -75px;
+  } 
+  section .timeline li {
+    padding: 0;
+  }
+}
+/* 第二阶段，屏幕小于1000px时，容器变为800px，circle变得更小，story也变得更小，同时为了更靠拢一些，加上li的左右padding */
+ @media screen and (max-width: 1000px) {
+  #about {
+    width: 800px;
+  }
+  .timeline .circle {
+    width: 84px;
+    height: 84px;
+    margin-left: -50px;
+  }
+  section .timeline li {
+    padding: 0 25px;
+  }
+  .timeline .story {
+    width: 270px;
+  }
+} 
+/* 第三阶段，屏幕小于800px时，section100%自适应，circle左边绝对定位，取消所有的li浮动，story自适应, 时间轴左侧绝对定位*/
+ @media screen and (max-width: 800px){
+  #about {
+    width: 100%; 
+  }
+  .timeline .circle {
+    width: 64px;
+    height: 64px;
+    left: 15px;
+    margin-left: 0;
+  }
+  .timeline li:nth-child(n) {
+    float: none;
+    text-align: left;
+    padding: 0;
+  }
+  .timeline {
+    padding: 0 20px;
+  }
+  .timeline .story {
+    width: calc(100% - 100px);
+    padding: 0 20px 20px 100px;
+  }
+  .timeline::before {
+    left: 55px;
+    height: calc(100% + 180px);
+  }
 }
 
 /* 定义section team */
 
+@media screen and (max-width: 1200px) {
+  #team, #contact {
+    width: 100%;
+  } 
+}
+ @media screen and (max-width: 1000px) {
+  #team {
+    width: 800px;
+  }
+} 
+
+#team .team-member {
+  float: left;
+  width: calc(33.33% - 30px);
+  height: 365px;
+  padding: 0 15px;
+  margin-bottom: 80px;
+}
+.team-member img {
+  width: 240px;
+  height: 240px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+}
+.team-member h3 {
+  margin-top: 25px;
+}
+.team-member p {
+  margin :5px 0 10px 0;
+}
+.team-member li {
+  width: 40px;
+  height: 40px;
+  padding: 0 5px;
+  display: inline-block;
+}
+.team-member li a {
+  width: 40px;
+  height: 40px;
+  display: block;
+  background:#000;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.team-member li a i {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  padding-top: 8px;
+  padding-left: 1px;
+}
+#team > p {
+  width: 750px;
+  margin: 0 auto;
+}
+
+/* 定义aside 客户 logo */
+aside.clients ul li {
+  width: calc(25% - 35px);
+  height: 150px;
+  margin: 0 15px;
+  float: left;
+  -border: 1px solid;
+}
+
+.clients a {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 15px auto;
+  -border: 1px solid red;
+  background: url("../image/clients/1.jpg") -14px -147px no-repeat;
+  background-size: 650%;
+}
+/* 不同的客户商标 */
+.clients li:nth-child(2) a {
+  background-position: -170px -147px;
+}
+.clients li:nth-child(3) a {
+  background-position: -486px -147px;
+}
+.clients li:nth-child(4) a {
+  background-position: -645px -147px;
+}

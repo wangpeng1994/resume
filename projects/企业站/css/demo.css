@@ -463,3 +463,10 @@ aside.clients ul li {
 .clients li:nth-child(4) a {
   background-position: -645px -147px;
 }
+
+/* 定义section contact */
+div.ct-bg {
+  height:780px;
+  background: url("../image/contact/1.jpg") no-repeat;
+  background-size: cover;
+}

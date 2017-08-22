@@ -1,0 +1,210 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 392629 */
+  src: url('//at.alicdn.com/t/font_392629_3waowz2vse3zncdi.eot');
+  src: url('//at.alicdn.com/t/font_392629_3waowz2vse3zncdi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_392629_3waowz2vse3zncdi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_392629_3waowz2vse3zncdi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_392629_3waowz2vse3zncdi.svg#iconfont') format('svg');
+}
+
+i {
+  font-family: 'iconfont';
+  font-style: normal;
+}
+
+/* css reset */
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* common css */
+header, section {
+  width: 800px;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 定义公共selection */
+section {
+  margin: 0 auto;
+  padding: 0 35px 35px 35px;
+  border-left: 3px solid deepskyblue;
+  border-right: 3px solid deepskyblue;
+}
+
+h2 {
+  width: 340px;
+  font-size: 1rem;
+  margin: 0 0 22px 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+h3 {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}
+h4 {
+  margin: -10px 0 10px 0;
+  font-weight: normal;
+  color: #aaa;
+}
+span {
+  color: #aaa;
+}
+p {
+  font-size: .9rem;
+  margin: 0;
+  text-align: justify;
+}
+
+/* header样式 */
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 180px;
+  margin: 20px auto -35px auto;
+  padding: 35px 35px 0 35px;
+  border: 3px solid deepskyblue;
+  border-bottom: none;
+}
+header .name {
+  display: flex;
+  justify-content: center;
+  width: 450px;
+}
+header .name .box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 123px;
+  height: 123px;
+  border-radius: 50%;
+  background: #000;
+  margin-right: 30px;
+}
+header .name i {
+  font-size: 80px;
+  color: #fff;
+}
+header .name .box2 {
+  margin: 30px 30px 0 0;
+}
+header .name h1 {
+  font-weight: normal;
+  margin: 0;
+}
+header .name h2 {
+  width: 170px;
+  border: none;
+}
+
+
+header .contact {
+  width: 300px;
+}
+header .contact h2 {
+  width: 360px;
+  padding-bottom: 3px;
+  margin-bottom: 8px;
+  border-bottom: 3px solid;
+}
+header .contact p {
+  display: inline-block;
+  margin: 2px 0;
+}
+
+/* 定义section work experience和education */
+
+section.timeline ul {
+  position: relative;
+}
+section.timeline ul li {
+  position: relative;
+  display: inline-block;
+  padding-left: 65px;
+}
+/* 定义time球 */
+section.timeline li::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 5px;
+  left: -5px;
+  background: #000;
+  border-radius: 50%;
+}
+/* 定义time轴 */
+section.timeline ul::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 17px);
+  top: 15px;
+  left: -1px;
+  background: #000;
+}
+
+/* 定义section activity 和 skill */
+
+/* 使用flex布局，让div左右分布 */
+section#bottom {
+  display: flex;
+  justify-content: center;
+  border-bottom: 3px solid deepskyblue;
+}
+#bottom p {
+  margin-bottom: 20px;
+}
+#bottom .activity {
+  width: 60%;
+}
+#bottom .activity div {
+  width: 300px;
+  display: inline-block;
+  margin-left: 40px;
+}
+/* 定义plus图标 */
+#bottom .activity i {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2em;
+  top: -65px;
+}
+
+
+#bottom .skill {
+  width: 40%;
+}
+#bottom .skill ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#bottom .skill ul li {
+  display: inline-block;
+  width: 50%;
+}
+#bottom .skill i {
+  font-size: 1.2em;
+}
+/* 收缩h2下面超出的下边框 */
+#bottom .skill h2 {
+  width: 100%;
+}
+/* 定义技能点样式 */
+#bottom .skill h3 {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #666;
+  margin: 0 0 35px 20px;
+}

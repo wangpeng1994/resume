@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>登陆|注册</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_418105_luo37mkl8zi79zfr.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login-register.css">
+</head>
+<body>
+  <header>
+    <a class="login" href="#"><i class="icon icon-login"></i></a>
+  </header>
+  <main>
+    <div class="flip-modal login">
+      <div class="modal modal-login">
+        <a class="close icon icon-close" href="#"></a>
+        <div class="tabs">
+          <a class="login active"  href="#">登录</a>
+          <a class="register" href="#">注册</a>  
+        </div>
+        <div class="content">
+          <div class="errormsg"></div>
+          <form action="/login" method="post">
+            <div class="input-field">
+              <i class="icon icon-user"></i>
+              <input name="username" type="text" placeholder="用户名">
+            </div>
+            <div class="input-field">
+              <i class="icon icon-lock"></i>
+              <input name="password" type="password" placeholder="密码">
+            </div>
+            <div class="input-field">
+              <input type="submit" value="登录">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal modal-register">
+        <a class="close icon icon-close" href="#"></a>
+        <div class="tabs">
+          <a class="login"  href="#">登录</a>
+          <a class="register active" href="#">注册</a> 
+        </div>
+        <div class="content">
+          <div class="errormsg"></div>
+          <form action="/register" method="post">
+            <div class="input-field">
+              <i class="icon icon-user"></i>
+              <input name="username" type="text" placeholder="输入用户名">
+            </div>
+            <div class="input-field">
+              <i class="icon icon-lock"></i>
+              <input name="password" type="password" placeholder="输入密码">
+            </div>
+            <div class="input-field">
+              <i class="icon icon-lock"></i>
+              <input name="password2" type="password" placeholder="再次输入密码">
+            </div>
+            <div class="input-field">
+              <input type="submit" value="注册">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/login-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    ul, li, span, h1  {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .cover {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url('imgs/wall.jpg') center center no-repeat;
+      background-size: cover;
+      filter: blur(10px);
+    }
+
+    #weather {
+      width: 1000px;
+      height: 650px;
+      padding: 30px 60px;
+      margin: 0 auto;
+      transform: translateY(10%);
+      background: url('imgs/bg.jpg');
+      border-radius: 10px;
+      box-shadow: 0 5px 10px 5px rgba(2, 16, 39, 0.6);
+    }
+
+    #weather .city {
+      border-bottom: 1px solid #333;
+      margin-bottom: 60px;
+    }
+    #weather .city::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    #weather .city h1 {
+      font-size: 40px;
+      font-weight: normal;
+      margin-left: 20px;
+      color: #bde9f9;
+    }
+
+    #weather .city input {
+      width: 80px;
+      height: 30px;
+      margin-left: 25px;
+      font-size: 18px;
+      color: #CECDCD;
+      background: rgba(0,0,0,0);
+      border: none;
+      outline: none;
+    }
+    #weather .city .search {
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      color: red;
+      vertical-align: middle;
+      background:  url('imgs/search.png') center center no-repeat;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    #weather .city span {
+      display: inline-block;
+      font-size: 22px;
+    }
+    #weather .city .date {
+      margin-left: 480px;
+      color: #acccfa;
+    }
+    #weather .city .day {
+      color: #f8de8f;
+    }
+  
+    #weather .today {
+      position: relative;
+      margin-bottom: 50px;
+      background: rgba(32, 74, 141, 0.5);
+      box-shadow: 0 3px 5px 3px rgba(6, 22, 44, 0.5);
+      border-radius: 10px;
+    }
+    #weather .today::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    #weather .today .now {
+      float: left;
+      margin-left: 70px;
+      margin-right:  100px;
+    }
+    #weather .today .now .now-icon {
+      width: 185px;
+      height: 170px;
+    }
+    #weather .today .now .temp {
+      width: 125px;
+      position: absolute;
+      top: 65px;
+      left: 300px;
+      font-size: 55px;
+      font-weight: bold;
+      color: #e18710;
+    }
+    #weather .today .now span {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      bottom: 8px;
+      font-size: 22px;
+      text-align: center;
+      color: #f8de8f;
+    }
+
+    #weather .today .info {
+      padding-top: 20px;
+    }
+    #weather .today .info li {
+      margin-bottom: 7px;
+    }
+    #weather .today .info li span {
+      display: inline-block;
+      font-size: 18px;
+      text-align:justify;
+      text-align-last:justify; 
+    }
+    #weather .today .info li span:first-child {
+      width: 120px;
+      color: #CECDCD;
+    }
+    #weather .today .info li span:last-child {
+      color: #fff;
+    }
+
+    #weather .future ul {
+      width: 860px;
+      padding-left: 57px;
+
+    }
+    #weather .future li {
+      display: inline-block;
+      width: 120px;
+      padding: 3px;
+      margin: 0 2px;
+      text-align: center;
+      background: rgba(120,100,170,0.36);
+      box-shadow: 0 3px 3px 3px rgba(66, 66, 66, 0.8);
+      border-radius: 10px;
+    }
+    #weather .future li:last-child {
+      margin: 0;
+    }
+    #weather .future .future-icon {
+      width: 100px;
+    }
+    #weather .future .brif {
+      color: #fff;
+      background: rgba(83, 84, 85, 0.43);
+      border-radius: 10px;
+    }
+    #weather .future .brif span {
+      display: block;
+      width: 110px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="cover">1111</div>
+  <div id="weather">
+    <div class="city">
+      <h1>CITY</h1>
+      <input type="text" placeholder="拼音查询">
+      <i class="search"></i>
+      <span class="date">N/A</span>
+      <span class="day">N/A</span>
+    </div>
+    
+    <div class="today">
+      <div class="now">
+        <img class="now-icon" src="http://s1.sencdn.com/web/icons/3d_50/5.png">
+        <div class="temp">N/A℃</div>
+        <span class="text">N/A/N/A</span>
+        <span class="low-high">28°~35°</span>
+      </div>
+      <ul class="info">
+        <li class="quality">
+          <span>空气质量：</span>
+          <span>N/A</span>
+        </li>
+        <li class="wind">
+          <span>风&nbsp&nbsp&nbsp&nbsp&nbsp向：</span>
+          <span>N/A</span>
+        </li>
+        <li class="dressing">
+          <span>穿衣指数：</span>
+          <span>N/A</span>
+        </li>
+        <li class="sport">
+          <span>运动指数：</span>
+          <span>N/A</span>
+        </li>
+        <li class="uv">
+          <span>紫外线强度：</span>
+          <span>N/A</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="future">
+      <ul>
+        <li>
+          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <div class="brif">
+            <span class="low-high">N/A</span>
+            <span class="day">N/A(N/A)</span>
+          </div>
+        </li>
+        <li>
+          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <div class="brif">
+            <span class="low-high">N/A</span>
+            <span class="day">N/A(N/A)</span>
+          </div>
+        </li>
+        <li>
+          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <div class="brif">
+            <span class="low-high">N/A</span>
+            <span class="day">N/A(N/A)</span>
+          </div>
+        </li>
+        <li>
+          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <div class="brif">
+            <span class="low-high">N/A</span>
+            <span class="day">N/A(N/A)</span>
+          </div>
+        </li>
+        <li>
+          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <div class="brif">
+            <span class="low-high">N/A</span>
+            <span class="day">N/A(N/A)</span>
+          </div>
+        </li>
+        <li>
+          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <div class="brif">
+            <span class="low-high">N/A</span>
+            <span class="day">N/A(N/A)</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  
+    //var date = new Date()
+    //date.getDay() // 1 2 3 4 5 6 0
+    /*      
+      1. 用户打开页面，自动获取ip
+      2. 根据ip 获取cityid，或者根据input 输入的城市名获取cityid
+      3. 根据 cityid 获取天气数据， 如果用户输入，点击确定后，则页面重新发送 第 3 步，获取天气，数据刷新成用户指定城市
+      4. 把数据填入到相关html中
+    */
+
+
+
+
+    // 2：根据ip或城市名获取cityid，然后获取weather信息
+    function getWeather(key){
+      $.get(`https://weixin.jirengu.com/weather/cityid?location=${key}`).done(function(idRet){
+        var id = idRet.results[0].id
+        var name = idRet.results[0].name
+        console.log('Im cityid:', idRet)
+        console.log(id, name)
+        
+        $.get(`https://weixin.jirengu.com/weather/now?cityid=${id}`).done(function(weatherRet){
+          console.log(weatherRet)
+          render(weatherRet)
+        }).fail(function(){
+          alert('获取天气数据失败')
+        })
+      }).fail(function(){
+        alert('获取cityid失败')
+      })
+    }
+
+    // 1-A： 获取 ip ,页面第一次加载js，执行根据ip获取cityid，获取天气， 此后不刷新页面，则不会再次通过ip获取。
+    $.get('https://weixin.jirengu.com/weather/ip').done(function(ipRet){
+      if(ipRet.status === 'ok'){
+        console.log('Im ip:', ipRet.data)
+        getWeather(ipRet.data)
+      }
+    })
+
+    // 1-B：根据用户输入的城市名，获取 cityid, 获取天气
+    $('#weather .city .search').click(function(){
+      var cityname = $('#weather .city input').val()
+      console.log('Im cityname:', cityname)
+      getWeather(cityname)
+    })
+
+    // 3：渲染页面
+    function render(data){
+      if(data.status === 'OK'){
+        $('#weather .city h1').text(data.weather[0].city_name)
+        $('#weather .city .date').text(data.weather[0].future[0].date)
+        $('#weather .city .day').text(data.weather[0].future[0].day)
+        $('#weather .today .now-icon').attr('src', `//weixin.jirengu.com/images/weather/code/${data.weather[0].now.code}.png`)
+        $('#weather .today .temp').text(data.weather[0].now.temperature+'℃')
+        $('#weather .today .text').text(data.weather[0].now.text)
+        $('#weather .today .low-high').text(data.weather[0].future[0].low+'°~'+data.weather[0].future[0].high+'°')
+
+        $('#weather .today .info .quality span:last-child').text(data.weather[0].now.air_quality.city.quality)
+        $('#weather .today .info .wind span:last-child').text(data.weather[0].now.wind_direction+'风'+data.weather[0].now.wind_scale+'级')
+        $('#weather .today .info .dressing span:last-child').text(data.weather[0].today.suggestion.dressing.brief)
+        $('#weather .today .info .sport span:last-child').text(data.weather[0].today.suggestion.sport.brief)
+        $('#weather .today .info .uv span:last-child').text(data.weather[0].today.suggestion.uv.brief)
+
+        for(var i = 1; i < 6; i++){
+          $('#weather .future ul li').each(function(index, node){
+            var index = index + 1
+            $(node).find('img').attr('src', `//weixin.jirengu.com/images/weather/code/${data.weather[0].future[index].code1}.png`)
+            $(node).find('.brif .low-high').text(data.weather[0].future[index].low+'°~'+data.weather[0].future[index].high+'°')            
+            $(node).find('.brif .day').text(data.weather[0].future[index].day+'('+data.weather[0].future[index].date.slice(5,10)+')')
+          })
+        }
+      }else{
+        alert('天气数据异常')
+      }
+    }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+  
+  </script>
+
+
+</body>
+</html>
+

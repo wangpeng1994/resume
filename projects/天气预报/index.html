@@ -179,7 +179,7 @@
   </style>
 </head>
 <body>
-  <div class="cover">1111</div>
+  <div class="cover"></div>
   <div id="weather">
     <div class="city">
       <h1>CITY</h1>
@@ -191,7 +191,7 @@
     
     <div class="today">
       <div class="now">
-        <img class="now-icon" src="http://s1.sencdn.com/web/icons/3d_50/5.png">
+        <img class="now-icon" src="imgs/0.png">
         <div class="temp">N/A℃</div>
         <span class="text">N/A/N/A</span>
         <span class="low-high">28°~35°</span>
@@ -223,42 +223,42 @@
     <div class="future">
       <ul>
         <li>
-          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <img class="future-icon" src="imgs/0.png">
           <div class="brif">
             <span class="low-high">N/A</span>
             <span class="day">N/A(N/A)</span>
           </div>
         </li>
         <li>
-          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <img class="future-icon" src="imgs/0.png">
           <div class="brif">
             <span class="low-high">N/A</span>
             <span class="day">N/A(N/A)</span>
           </div>
         </li>
         <li>
-          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <img class="future-icon" src="imgs/0.png">
           <div class="brif">
             <span class="low-high">N/A</span>
             <span class="day">N/A(N/A)</span>
           </div>
         </li>
         <li>
-          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <img class="future-icon" src="imgs/0.png">
           <div class="brif">
             <span class="low-high">N/A</span>
             <span class="day">N/A(N/A)</span>
           </div>
         </li>
         <li>
-          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <img class="future-icon" src="imgs/0.png">
           <div class="brif">
             <span class="low-high">N/A</span>
             <span class="day">N/A(N/A)</span>
           </div>
         </li>
         <li>
-          <img class="future-icon" src="http://s5.sencdn.com/web/icons/3d_50/10.png">
+          <img class="future-icon" src="imgs/0.png">
           <div class="brif">
             <span class="low-high">N/A</span>
             <span class="day">N/A(N/A)</span>
@@ -317,7 +317,7 @@
         $('#weather .city h1').text(data.weather[0].city_name)
         $('#weather .city .date').text(data.weather[0].future[0].date)
         $('#weather .city .day').text(data.weather[0].future[0].day)
-        $('#weather .today .now-icon').attr('src', `//weixin.jirengu.com/images/weather/code/${data.weather[0].now.code}.png`)
+        $('#weather .today .now-icon').attr('src', `https://weixin.jirengu.com/images/weather/code/${data.weather[0].now.code}.png`)
         $('#weather .today .temp').text(data.weather[0].now.temperature+'℃')
         $('#weather .today .text').text(data.weather[0].now.text)
         $('#weather .today .low-high').text(data.weather[0].future[0].low+'°~'+data.weather[0].future[0].high+'°')
@@ -331,7 +331,7 @@
         for(var i = 1; i < 6; i++){
           $('#weather .future ul li').each(function(index, node){
             var index = index + 1
-            $(node).find('img').attr('src', `//weixin.jirengu.com/images/weather/code/${data.weather[0].future[index].code1}.png`)
+            $(node).find('img').attr('src', `https://weixin.jirengu.com/images/weather/code/${data.weather[0].future[index].code1}.png`)
             $(node).find('.brif .low-high').text(data.weather[0].future[index].low+'°~'+data.weather[0].future[index].high+'°')            
             $(node).find('.brif .day').text(data.weather[0].future[index].day+'('+data.weather[0].future[index].date.slice(5,10)+')')
           })
@@ -340,25 +340,8 @@
         alert('天气数据异常')
       }
     }
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
   
   </script>
-
-
 </body>
 </html>
 

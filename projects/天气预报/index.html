@@ -282,8 +282,8 @@
       $.get(`https://weixin.jirengu.com/weather/cityid?location=${key}`).done(function(idRet){
         var id = idRet.results[0].id
         var name = idRet.results[0].name
-        console.log('Im cityid:', idRet)
-        console.log(id, name)
+        // console.log('Im cityid:', idRet)
+        // console.log(id, name)
         
         $.get(`https://weixin.jirengu.com/weather/now?cityid=${id}`).done(function(weatherRet){
           console.log(weatherRet)
@@ -299,21 +299,23 @@
     // 1-A： 获取 ip ,页面第一次加载js，执行根据ip获取cityid，获取天气， 此后不刷新页面，则不会再次通过ip获取。
     $.get('https://weixin.jirengu.com/weather/ip').done(function(ipRet){
       if(ipRet.status === 'ok'){
-        console.log('Im ip:', ipRet.data)
+        // console.log('Im ip:', ipRet.data)
         getWeather(ipRet.data)
       }
     })
 
     // 1-B：根据用户输入的城市名，获取 cityid, 获取天气
-    $('#weather .city .search').click(function(){
+    $('#weather .city .search').on('click', function(){
       var cityname = $('#weather .city input').val()
-      console.log('Im cityname:', cityname)
+      // console.log('Im cityname:', cityname)
       getWeather(cityname)
     })
 
     // 3：渲染页面
     function render(data){
       if(data.status === 'OK'){
+        $('#weather .city input').val('') // 数据到来后先清空input框残留
+
         $('#weather .city h1').text(data.weather[0].city_name)
         $('#weather .city .date').text(data.weather[0].future[0].date)
         $('#weather .city .day').text(data.weather[0].future[0].day)

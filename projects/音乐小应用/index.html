@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>音乐播放器</title>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_428116_j0w2bp4e5z71ra4i.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      height: 100vh;
+    }
+
+    .cover {
+      position: absolute;
+      /* content: ''; */
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(bg.jpg) center center no-repeat;
+      background-size: cover;
+      filter: blur(3px);
+    }
+
+    .musicbox {
+      position: absolute;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      width: 300px;
+      background: rgba(22,34,30,0.9);
+    }
+
+    .music-panel {
+      border: 3px solid #222;
+      box-shadow: 0 3px 6px 3px rgba(25,53,25,0.95);
+    }
+
+    .musicbox .photo {
+      height: 200px;
+      margin: 2px;
+      background: deepskyblue;
+      overflow: hidden;
+    }
+    .musicbox .photo img {
+      height: 100%;
+      position: relative;
+      right: 5px;
+    }
+
+    .musicbox .progress .bar {
+      height: 10px;
+      background-color: #222;
+      cursor: pointer;
+    }
+    .musicbox .progress .progress-now {
+      background-color: #239909; 
+      height: 10px;
+      width: 0;
+      position: relative;
+    }
+    .musicbox .progress .time {
+      text-align: right;
+      margin-right: 3px;
+      font-size: 12px;
+    }
+
+    .musicbox .info {
+      margin-left: 50px;
+    }
+    .musicbox .info .title {
+      font-size: 18px;
+    }
+    .musicbox .info .auther {
+      font-size: 13px;
+    }
+
+    .musicbox .control {
+      width: 200px;
+      margin: 10px auto;
+      color: #67ed14;
+    }
+    .musicbox .control::selection {
+      background: rgba(0,0,0,0);
+    } 
+    .musicbox .control .iconfont {
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .musicbox .control .icon-pause,
+    .musicbox .control .icon-play {
+      font-size: 60px;
+    }
+    .musicbox .control .play {
+      margin: 0 31px;
+    }
+    .musicbox .control .prev,
+    .musicbox .control .next {
+      position: relative;
+      bottom: 11px;
+    }
+
+  
+  </style>
+</head>
+<body>
+  <div class="cover"></div>
+  <div class="musicbox">
+    <div class="music-panel">
+      <div class="photo">
+        <img src="">
+      </div>
+      <div class="progress">
+        <div class="bar">
+          <div class="progress-total"></div>
+          <div class="progress-now"></div>
+        </div>
+        <div class="time">0:00/0:00</div>
+      </div>
+
+      <div class="music">
+        <div class="info">
+          <div class="title">My song</div>
+          <div class="auther">wangpeng</div>
+        </div>
+
+        <div class="control">
+          <span class="prev"><i class="iconfont icon-prev"></i></span>
+          <span class="play"><i class="iconfont icon-pause"></i></span>
+          <span class="next"><i class="iconfont icon-next"></i></span>
+        </div>
+      </div>
+    </div>
+    <ul class="list">
+      <!-- <li>贰佰-玫瑰 <i class="fa fa-play"></i></li> -->
+    </ul>
+  </div>
+
+  <script>
+    var musicList = []
+    var currentIndex = 0
+    var clock
+    var audio = new Audio()
+    audio.autoplay = true
+    audio.loop = true
+  
+    function $(selector){
+      return document.querySelector(selector)
+    }
+
+    function getMusicList(callback){
+      var xhr = new XMLHttpRequest()
+      xhr.open('GET','/music.json', true)
+      xhr.onload = function(){
+        if((xhr.status >=200 && xhr.status < 300) || xhr.status === 304){
+          callback(JSON.parse(this.responseText))
+        }else{
+          console.log('数据获取失败')
+        }
+      }
+      xhr.onerror = function(){
+        console.log('网络异常')
+      }
+      xhr.send()
+    }
+
+    function loadMusic(musicObj){
+      $('.musicbox .photo img').setAttribute('src', musicObj.img)
+      $('.musicbox .title').innerText = musicObj.title
+      $('.musicbox .auther').innerText = musicObj.auther
+      audio.src = musicObj.src
+      
+    }
+
+    getMusicList(function(list){
+      musicList = list //把数据传到外部
+      loadMusic(musicList[currentIndex])
+    })
+
+    /* 下面是音乐控制 */
+
+    //进度条君
+    audio.ontimeupdate = function(){
+      console.log(this.currentTime)
+      $('.musicbox .progress-now').style.width = (this.currentTime/this.duration)*100 + '%'
+    }
+    //时间读秒
+    audio.onplay = function(){
+      clock = setInterval(function(){
+        var min = Math.floor(audio.currentTime/60)
+        var sec = Math.floor(audio.currentTime%60) + ''
+        var totalMin = Math.floor(audio.duration/60)
+        var totalSec = Math.floor(audio.duration%60) + ''
+        sec = sec.length === 2? sec : '0' + sec
+        totalSec = totalSec.length ===2? totalSec : '0' + totalSec
+        $('.musicbox .time').innerText = min + ':' + sec + '/' + totalMin + ':' + totalSec
+      }, 1000)
+    }
+    audio.onpause = function(){
+      clearInterval(clock)
+    }
+    //暂停按钮
+    $('.musicbox .play').onclick = function(){
+      if(audio.paused){
+        audio.play()
+        this.querySelector('.iconfont').classList.remove('icon-play')
+        this.querySelector('.iconfont').classList.add('icon-pause')
+      }else{
+        audio.pause()
+        this.querySelector('.iconfont').classList.remove('icon-pause')
+        this.querySelector('.iconfont').classList.add('icon-play')
+      }
+    }
+    //下一曲
+    $('.musicbox .next').onclick = function(){
+
+      document.querySelector('.musicbox .play .iconfont').classList.remove('icon-play')
+      document.querySelector('.musicbox .play .iconfont').classList.add('icon-pause')
+
+      currentIndex = (++currentIndex)%musicList.length
+      console.log(currentIndex)
+      loadMusic(musicList[currentIndex])
+    }
+    //上一曲
+    $('.musicbox .prev').onclick = function(){
+
+      document.querySelector('.musicbox .play .iconfont').classList.remove('icon-play')
+      document.querySelector('.musicbox .play .iconfont').classList.add('icon-pause')
+
+      currentIndex = (musicList.length + --currentIndex)%musicList.length
+      console.log(currentIndex)
+      loadMusic(musicList[currentIndex])
+    }
+    //进度条点击跳跃
+    $('.musicbox .bar').onclick = function(e){
+      console.log(e)
+      var percent = e.offsetX / parseInt(getComputedStyle(this).width)
+      audio.currentTime = audio.duration * percent
+    }
+
+
+
+
+  
+  
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>

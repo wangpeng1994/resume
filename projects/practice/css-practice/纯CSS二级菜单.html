@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .clearfix::after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    ol.menu {
+      margin: 10px;
+      text-align: center;
+      line-height: 25px;
+      border-left: 1px solid green;
+      z-index: 2;
+    }
+
+    ol {
+      list-style: none;
+    }
+
+    ol.menu>li {
+      float: left;
+      border: 1px solid green;
+      border-left: none;
+      width: calc(100%/3);
+      position: relative;
+      background: white;
+      cursor: pointer;
+    }
+
+    ol.submenu {
+      position: absolute;
+      border: 1px solid green;
+      top: 100%;
+      left: -1px;
+      right: -1px;
+      visibility: hidden;
+      background: white;
+    }
+
+    ol.menu>li:hover .submenu {
+      visibility: visible;
+      z-index: -1;
+      animation: move 0.3s;
+    }
+
+    ol.submenu>li:hover {
+      background: green;
+    }
+
+    @keyframes move {
+      0% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <ol class="menu clearfix">
+    <li>选项1
+      <ol class="submenu">
+        <li>二级菜单1</li>
+        <li>二级菜单2</li>
+        <li>二级菜单3</li>
+        <li>二级菜单4</li>
+      </ol>
+    </li>
+    <li>选项2
+      <ol class="submenu">
+        <li>二级菜单1</li>
+        <li>二级菜单2</li>
+        <li>二级菜单3</li>
+        <li>二级菜单4</li>
+      </ol>
+    </li>
+    <li>选项3
+      <ol class="submenu">
+        <li>二级菜单1</li>
+        <li>二级菜单2</li>
+        <li>二级菜单3</li>
+        <li>二级菜单4</li>
+      </ol>
+    </li>
+  </ol>
+</body>
+
+</html>

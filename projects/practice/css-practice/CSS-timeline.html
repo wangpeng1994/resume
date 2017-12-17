@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>timeline</title>
+  <style>
+    /* 
+* {
+  margin: 0;
+  padding: 0;
+  border: 1px solid red;
+}
+ */
+
+    p {
+      margin-left: 50px;
+      position: relative;
+      min-height: 50px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    p::before {
+      content: '';
+      position: absolute;
+      border: 1px solid black;
+      border-radius: 9px;
+      left: -30px;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      background: pink;
+      z-index: 1;
+    }
+
+    p::after {
+      content: '';
+      position: absolute;
+      border-left: 1px solid;
+      height: 100%;
+      left: -22px;
+      top: 3px;
+    }
+
+    p:last-child::after {
+      /*   display: none; */
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="timeline">
+    <p>我是王鹏</p>
+    <p>我来自安徽，我也在新疆待了十几年</p>
+    <p>王鹏？我不认识啊</p>
+    <p>我也不认识</p>
+    <p>楼上的，你们是来搞笑的吧</p>
+    <p>哈哈哈23333333333333333</p>
+    <p>红红火火恍恍惚惚</p>
+    <p>Yes！亦可赛艇~</p>
+  </div>
+</body>
+
+</html>

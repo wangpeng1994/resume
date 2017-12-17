@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    /* 设置整体垂直居中 */
+
+    .layout {
+      width: 600px;
+      margin: 0 auto;
+      -border: 1px solid transparent;
+      box-shadow: 0px 5px 10px rgba(150, 150, 150, 0.9);
+    }
+    /* 触发form BFC，阻止外边距合并 */
+
+    form {
+      overflow: auto;
+    }
+    /* 设置大标题样式 */
+
+    h2 {
+      margin: 0;
+      padding: 15px;
+      color: #fff;
+      background: #009688;
+    }
+    /* 设置内部box左内边距 */
+
+    .name,
+    .qq,
+    .want label,
+    .food,
+    .gender {
+      margin: 15px;
+      color: #757575;
+    }
+    /* 定义输入框样式 */
+
+    .name input,
+    .qq input,
+    textarea {
+      border-style: none;
+      border-bottom: 1px solid #808080;
+      display: block;
+      width: 100%;
+      padding: 10px 0;
+      outline: none;
+    }
+
+    textarea {
+      width: 570px;
+      margin: 0 15px;
+      height: 70px;
+    }
+    /* 设置单复选box的浮动，以便水平分布 */
+
+    .food,
+    .gender {
+      width: 268px;
+      float: left;
+    }
+    /* 设置各个选项独占一行 */
+
+    .food li,
+    .gender li,
+    .btn {
+      display: block;
+    }
+    /* 设置按钮样式 */
+
+    .btn {
+      clear: both;
+      color: #fff;
+      background: #009688;
+      padding: 8px 15px;
+      border: none;
+      margin: 15px 0 30px 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <h2>信息收集表</h2>
+    <form action="" method="post">
+
+      <div class="name">
+        <label for="name">姓名</label>
+        <input id="name" type="text">
+      </div>
+      <div class="qq">
+        <label for="qq">QQ</label>
+        <input id="qq" type="text">
+      </div>
+      <div class="want">
+        <label for="want">要说的话</label>
+        <textarea name="want" class="want"></textarea>
+      </div>
+      <div class="food">
+        <li>
+          <input id="milk" type="checkbox" value="milk" checked>
+          <label for="milk">Milk</label>
+        </li>
+        <li>
+          <input id="sugar" type="checkbox" value="sugar">
+          <label for="sugar">Sugar</label>
+        </li>
+        <li>
+          <input id="lemon" type="checkbox" value="lemon">
+          <label for="lemon">Lemon</label>
+        </li>
+      </div>
+      <div class="gender">
+        <li>
+          <input id="male" type="radio" name="gender" value="male" checked>
+          <label for="male">Male</label>
+        </li>
+        <li>
+          <input id="female" type="radio" name="gender" value="female">
+          <label for="female">Male</label>
+        </li>
+      </div>
+      <input class="btn" type="button" value="提交">
+
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+    .layout {
+      border-radius: 5px;
+      width: 600px;
+      height: 40px;
+      margin: 0 auto;
+      background: #f1f1f1;
+      box-shadow: 0 2px 5px rgba(100, 100, 100, 0.5);
+    }
+
+    ul.nav {
+      padding: 0;
+    }
+
+    .menu {
+      float: left;
+      width: 65px;
+      height: 100%;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .menu.more {
+      position: relative;
+    }
+
+    .menu.more ul {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      visibility: hidden;
+      width: 160px;
+      text-align: left;
+      background: white;
+      box-shadow: 0 2px 5px rgba(100, 100, 100, 0.5);
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .nav::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .menu:hover .child {
+      visibility: visible;
+    }
+
+    a:hover {
+      background: #ccc;
+    }
+
+    a {
+      color: black;
+      display: block;
+      text-decoration: none;
+    }
+
+    .child a {
+      padding-left: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout clearfix">
+    <ul class="nav">
+      <li class="menu"><a href="#">首页</a></li>
+      <li class="menu"><a href="#">作品</a></li>
+      <li class="menu more">
+        <a href="#">更多</a>
+        <ul class="child">
+          <li class="submenu"><a href="#">Github</a></li>
+          <li class="submenu"><a href="#">博客</a></li>
+          <li class="submenu"><a href="#">知乎</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

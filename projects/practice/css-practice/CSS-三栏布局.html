@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS-三栏布局</title>
+  <style>
+    body {
+      min-width: 400px;
+    }
+
+    aside.left {
+      width: 200px;
+      height: 500px;
+      background: lime;
+      float: left;
+    }
+
+    aside.right {
+      width: 200px;
+      height: 500px;
+      background: red;
+      float: right;
+    }
+
+    main {
+      height: 500px;
+      margin: 0 220px;
+      background: deepskyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <aside class="left">I'm left!</aside>
+  <aside class="right">I'm right!</aside>
+  <main>I'm main</main>
+</body>
+
+</html>

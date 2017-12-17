@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <style>
+    body {
+      background: #def;
+    }
+
+    .layout {
+      width: 650px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .header a {
+      display: inline-block;
+      color: #333;
+      font-size: 13px;
+      margin-top: ;
+    }
+
+    .header a img {
+      vertical-align: middle;
+      width: 32px;
+      border-radius: 17px;
+    }
+
+    .header span {
+      font-size: 13px;
+      color: #999;
+    }
+
+    .main a {
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      margin: 7px 0;
+      color: black;
+    }
+
+    .main a:visited {
+      color: #969696;
+    }
+
+    .main a:hover {
+      text-decoration: underline;
+    }
+
+    .main p {
+      width: 480px;
+      margin: 0;
+      font-size: 13px;
+      line-height: 25px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .main a img {
+      float: right;
+      width: 150px;
+      position: relative;
+      top: -10px;
+      border-radius: 4px;
+    }
+
+    .clearfix::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .footer {
+      height: 20px;
+      line-height: px;
+      font-size: 0;
+    }
+
+    .footer i,
+    .footer a,
+    .footer span {
+      display: inline-block;
+      font-size: 12px;
+      margin-right: 10px;
+      position: relative;
+      top: -2px;
+      color: #999;
+    }
+
+    .footer i {
+      margin-right: 3px;
+    }
+
+    @font-face {
+      font-family: 'iconfont';
+      /* project id 381483 */
+      src: url('//at.alicdn.com/t/font_381483_34mg0vary8og8pvi.eot');
+      src: url('//at.alicdn.com/t/font_381483_34mg0vary8og8pvi.eot?#iefix') format('embedded-opentype'),
+      url('//at.alicdn.com/t/font_381483_34mg0vary8og8pvi.woff') format('woff'),
+      url('//at.alicdn.com/t/font_381483_34mg0vary8og8pvi.ttf') format('truetype'),
+      url('//at.alicdn.com/t/font_381483_34mg0vary8og8pvi.svg#iconfont') format('svg');
+    }
+
+    .icon-watch::before {
+      font-family: 'iconfont';
+      content: '\e624';
+      font-style: normal;
+      font-size: 18px;
+      position: relative;
+      top: 4px;
+    }
+
+    .icon-comments::before {
+      font-family: 'iconfont';
+      content: '\e60b';
+      font-style: normal;
+      position: relative;
+      top: 2px;
+    }
+
+    .icon-like::before {
+      font-family: 'iconfont';
+      content: '\e61a';
+      font-style: normal;
+      font-size: 14px;
+    }
+
+    .icon-money::before {
+      font-family: 'iconfont';
+      content: '\e603';
+      font-style: normal;
+      font-size: 16px;
+    }
+
+    .footer a:hover i,
+    .footer a:hover {
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="header">
+      <a href="#"><img src="https://upload.jianshu.io/users/upload_avatars/569985/0b0cd539-7b8c-457c-acc7-7ed941bb0a69.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240" alt=""></a>
+      <a href="#">陈一发</a>
+      <span>昨天 14:25</span>
+    </div>
+    <div class="main clearfix">
+      <a href="#"><img src="https://upload-images.jianshu.io/upload_images/569985-bca54e45ba814758?imageMogr2/auto-orient/strip|imageView2/1/w/375/h/300" alt=""></a>
+      <a href="#">年轻人，只有读书才能逆袭？趁着年轻多读点书吧</a>
+      <p>文：安梳颜、阿肆 间歇性踌躇满志， 持续性混吃等死， 这是现在很多人的常态， 他们一遍又一遍地抱怨生活，却从没想过原因。 他们永远都活在压抑的氛围里 每天都在焦虑，抱怨，不开心，好不容易放个周末，就在家睡死过去，当问起为什么变成了这幅毫无生气，碌碌无为的模样时？他们立刻唇枪舌剑地反击，因为我穷，因为我出身不好，因为我生活在底层，因为我没办法改变现状。
+        他们把自己的人生过成了自己最讨厌的样子。
+      </p>
+    </div>
+    <div class="footer">
+      <a href="#"><i class="iconfont icon-watch"></i>10874</a>
+      <a href="#"><i class="iconfont icon-comments"></i>55</a>
+      <i class="iconfont icon-like"></i><span>408</span>
+      <i class="iconfont icon-money"></i><span>5</span>
+    </div>
+  </div>
+</body>
+
+</html>

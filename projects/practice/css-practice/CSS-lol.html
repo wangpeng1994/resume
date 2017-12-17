@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS-lol</title>
+  <style>
+    /*定义整个容器宽度,以便浮动,还有居中*/
+
+    .layout {
+      width: 810px;
+      margin: 0 auto;
+    }
+    /*定义标题样式*/
+
+    .layout h1 {
+      text-align: center;
+      padding: 10px;
+      margin-bottom: 40px;
+      border-bottom: 1px #ccc solid;
+      color: #666;
+    }
+    /*去除ul默认padding*/
+
+    .landscape {
+      padding: 0;
+    }
+    /*定义li的样式和浮动*/
+
+    .landscape li {
+      list-style: none;
+      float: left;
+      margin: 15px 5px;
+      background: #fff;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    /* 在这里清不清除浮动,虽然暂时没影响,但是如果ul后面还要新增内容,则现在最好顺手清除当前浮动为后续元素带来的影响 */
+
+    .landscape::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    /* 定义图片宽高和透明度 */
+
+    .landscape li img {
+      width: 260px;
+      height: 173px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <h1>S8赛季上分TOP 6</h1>
+    <ul class="landscape">
+      <li>
+        <img src="http://www.te5.com/uploads/allimg/160513/28-1605131329560-L.jpg" alt="">
+        <p>蛮族之王</p>
+      </li>
+      <li>
+        <img src="http://img2.dwstatic.com/lol/1512/315334471624/1451379311300.jpg" alt="">
+        <p>寒冰射手</p>
+      </li>
+      <li>
+        <img src="http://pic2.52pk.com/files/allimg/140724/12U603_20450K235.jpg" alt="">
+        <p>迅捷斥候</p>
+      </li>
+      <li>
+        <img src="http://att.bbs.duowan.com/forum/201211/15/093944mssuv0tu39iuuv4p.jpg" alt="">
+        <p>德玛西亚之力</p>
+      </li>
+      <li>
+        <img src="http://img4.dwstatic.com/lol/1512/315414597848/1451460727413.jpg" alt="">
+        <p>九尾妖狐</p>
+      </li>
+      <li>
+        <img src="http://img2.dwstatic.com/lol/1512/314791918139/1450849614983.jpg" alt="">
+        <p>琴瑟仙女</p>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
